@@ -7,6 +7,12 @@ const theme = createTheme({
     purpley: {
       main: '#7400B8',
     },
+      greeny: {
+        main:'#80FFDB',
+      },
+    lilacy: {
+      main:'#5E60CE',
+    }
   },
 });
 
