@@ -2,6 +2,7 @@ import AppTitle from "../AppTitle/AppTitle"
 import SignUpButton from "../SignUpButton/SignUpButton"
 import LoginButton from "../LoginButton/LoginButton"
 import Container from '@mui/material/Container';
+import {Stack} from "@mui/material";
 
 function LandingPage() {
     return (
@@ -22,10 +23,10 @@ function LandingPage() {
 
         }}>
             <AppTitle />
-            <div>
-                <SignUpButton />
+            <Stack direction="row" spacing={4}  justifyContent='center'>
+                <SignUpButton  />
                 <LoginButton />
-            </div>
+            </Stack>
 
         </Container>
     )
