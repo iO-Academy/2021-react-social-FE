@@ -8,6 +8,8 @@ const theme = createTheme({
         },
         greeny: {
             main:'#80FFDB',
+            contrastText: '#5E60CE'
+
         },
         lilacy: {
             main:'#5E60CE'
