@@ -1,5 +1,5 @@
 function AppTitle() {
-    return <h1>TUNEBOOK</h1>
+    return <h1>BASSBOOK</h1>
 }
 
 export default AppTitle;
