@@ -12,7 +12,18 @@ const SignUpForm = () => {
 
     const auth = useAuth()
 
-    const handleSubmit = (e) => {
+    const handleClickUsername = (e) => {
+        if (e.target.value.length > 12){
+            let errorMessage = "Username too long."
+            document.getElementById("usernameError").innerHTML = '<p>' + errorMessage + '</p>'
+        } else {
+            setUsername(e.target.value)
+        }
+
+
+    //have this function handle all validation?
+    }
+    const handleSubmit = () => {
         console.log('A email was submitted: ' + username + password + bio);
         e.preventDefault();
         auth.signup(username,bio,email,password)
@@ -24,8 +35,9 @@ const SignUpForm = () => {
                 <Stack spacing={4} alignItems='center' justifyContent='center' sx={{mb: 2}} >
                 <TextField type="text" value={email} onChange={(e)=> setEmail(e.target.value)} id="filled-basic" label="Email"
                            variant="filled" sx={{bgcolor: 'whitey.main', borderRadius: '4px', width: '50vw'}} />
-                <TextField type="text" value={username} onChange={(e)=> setUsername(e.target.value)} id="filled-basic" label="Username (max 12 chars)"
+                <TextField type="text" value={username} onChange={handleClickUsername} id="filled-basic" label="Username (max 12 chars)"
                            variant="filled" sx={{bgcolor: 'whitey.main', borderRadius: '4px', width: '50vw'}} />
+                    <div id="usernameError"></div>
                 <TextField type="text" value={password} onChange={(e)=> setPassword(e.target.value)} id="filled-basic" label="Password (min 8 chars)"
                            variant="filled" sx={{bgcolor: 'whitey.main', borderRadius: '4px', width: '50vw'}} />
 
