@@ -2,10 +2,13 @@ import React, {useState} from 'react';
 import TextField from '@mui/material/TextField';
 import {Stack} from "@mui/material";
 import GoToProfile from "./GoToProfile";
+import {useAuth} from "../Hooks/useAuth";
 
 const LoginForm = () => {
-    const [email, setEmail] = useState(null)
-    const [password, setPassword] = useState(null)
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const auth = useAuth()
 
     const handleEmailChange = (e) => {
         //any validation checks here
@@ -20,6 +23,8 @@ const LoginForm = () => {
     const handleSubmit = (e) => {
         console.log('A email was submitted: '  + password + email);
         e.preventDefault();
+        auth.signin(email, password)
+
     }
 
     return (

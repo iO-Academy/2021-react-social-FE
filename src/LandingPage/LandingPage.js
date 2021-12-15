@@ -3,8 +3,8 @@ import SignUpButton from "../SignUpButton/SignUpButton"
 import LoginButton from "../LoginButton/LoginButton"
 import Container from '@mui/material/Container';
 import {Stack, ThemeProvider} from "@mui/material";
-import {createTheme} from "@mui/material/styles";
 import theme from "../Themes";
+import {Link} from "react-router-dom";
 
 function LandingPage() {
     return (
@@ -27,8 +27,12 @@ function LandingPage() {
             }}>
                 <AppTitle />
                 <Stack direction="row" spacing={4}  justifyContent='center'>
-                    <SignUpButton  />
-                    <LoginButton />
+                    <Link to='/signUp'>
+                        <SignUpButton  />
+                    </Link>
+                    <Link to='/login'>
+                        <LoginButton />
+                    </Link>
                 </Stack>
 
             </Container>
