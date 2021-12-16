@@ -1,6 +1,6 @@
 import AppTitle from "../AppTitle/AppTitle"
-import SignUpButton from "../SignUpButton/SignUpButton"
-import LoginButton from "../LoginButton/LoginButton"
+import SignUpButton from "./SignUpButton"
+import LoginButton from "./LoginButton"
 import Container from '@mui/material/Container';
 import {Stack, ThemeProvider} from "@mui/material";
 import theme from "../Themes";

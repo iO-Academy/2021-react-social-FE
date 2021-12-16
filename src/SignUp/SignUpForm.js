@@ -4,6 +4,7 @@ import {Stack} from "@mui/material";
 import RegisterButton from "./RegisterButton";
 import {useAuth} from "../Hooks/useAuth";
 import FormHelperText from '@mui/material/FormHelperText';
+import {useNavigate} from "react-router-dom";
 
 
 const SignUpForm = () => {
@@ -11,6 +12,7 @@ const SignUpForm = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [bio, setBio] = useState('')
+    const navigate = useNavigate()
 
     const auth = useAuth()
     function htmlEntities(str) {
@@ -66,13 +68,14 @@ const SignUpForm = () => {
             document.getElementById("passwordError").textContent = ''
             setPassword(htmlEntities(password))
         }
-        if (bio.length > 500 || bio.length === 0){
+        if (bio.length > 500){
             document.getElementById("bioError").textContent = 'Input bio that is less than 500 characters'
         } else {
             document.getElementById("bioError").textContent = ''
             setBio(htmlEntities(bio))
         }
         auth.signup(username,bio,email,password)
+        navigate('/myProfile')
     }
 
     return (
@@ -89,7 +92,7 @@ const SignUpForm = () => {
                            variant="filled" sx={{bgcolor: 'whitey.main', borderRadius: '4px', width: '50vw'}} />
                     <FormHelperText id="passwordError"></FormHelperText>
                 <TextField type="text" value={bio} onChange={(e)=> setBio(e.target.value)} id="filled-textarea"
-                           label="Tell us about yourself (max 500 chars)" placeholder="Bio" multiline rows={4} variant="filled"
+                           label="Tell us about yourself (max 500 chars) - optional" placeholder="Bio" multiline rows={4} variant="filled"
                            sx={{bgcolor: 'whitey.main', borderRadius: '4px', width: '50vw'}} />
                     <FormHelperText id="bioError"></FormHelperText>
                 </Stack>
