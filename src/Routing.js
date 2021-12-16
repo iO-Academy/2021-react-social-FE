@@ -3,6 +3,7 @@ import LandingPage from "./LandingPage/LandingPage";
 import SignInPage from "./SignUp/SignUpPage";
 import LoginPage from "./Login/LoginPage";
 import LoggedIn from "./Utilities/LoggedIn";
+import UserProfilePage from "./UserProfile/UserProfilePage";
 
 function Routing() {
     return (
@@ -11,9 +12,10 @@ function Routing() {
                 <Route exact path="/" element={<LandingPage />} />
                 <Route path="/signUp" element={<SignInPage />} />
                 <Route path="/login" element={<LoginPage />} />
-                <Route path="/secret" element={
+                <Route path="/myProfile" element={<UserProfilePage />} />
+                <Route path="/*" element={
                     <LoggedIn>
-                        <LoginPage />
+                        <UserProfilePage />
                     </LoggedIn>
                 } />
             </Routes>
