@@ -2,9 +2,17 @@ import {ThemeProvider} from "@mui/material";
 import theme from "../Themes";
 import Container from "@mui/material/Container";
 import UserProfileHeader from "./UserProfileHeader";
+import MainProfile from "./MainProfile";
+import {useAuth} from "../Hooks/useAuth";
+import {useEffect} from "react";
 
 
 function UserProfilePage() {
+    const auth = useAuth()
+
+    useEffect(()=>{
+        console.log(auth.user)
+    })
     return (
         <ThemeProvider theme={theme}>
             <Container sx={{
@@ -24,6 +32,7 @@ function UserProfilePage() {
 
             }}>
                 <UserProfileHeader />
+                <MainProfile />
 
              </Container>
          </ThemeProvider>

@@ -5,6 +5,7 @@ import GoToProfile from "./GoToProfile";
 import {useAuth} from "../Hooks/useAuth";
 import {useNavigate} from "react-router-dom";
 import FormHelperText from "@mui/material/FormHelperText";
+import axios from "axios";
 
 
 const LoginForm = () => {
@@ -37,7 +38,7 @@ const LoginForm = () => {
         setPassword(e.target.value)
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         console.log('A email was submitted: '  + password + email);
         e.preventDefault();
         if (!ValidateEmail(email) || email.length === 0){
@@ -52,8 +53,14 @@ const LoginForm = () => {
             document.getElementById("error").textContent = ''
             setPassword(htmlEntities(password))
         }
-        auth.signin(email, password)
-        navigate('/myProfile')
+        let userId = auth.signin(email, password)
+
+        // let profileResponse = await axios.get(`http://localhost:8000/myProfile`, {
+        //     id: userId
+        // }).then(response => {
+        //     console.log(response)
+        // })
+        // navigate('/myProfile')
     }
 
     return (

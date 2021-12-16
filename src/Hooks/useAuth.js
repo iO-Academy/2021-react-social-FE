@@ -40,10 +40,23 @@ function useProvideAuth() {
                 password: password
         }).then(response => {
             if (response.data.success) {
-                return setUser(response.data.data);
+                return response.data.data
+            } else {
+                navigate('/login')
             }
+        }).then( async (user) => {
+            let profileResponse = await axios.get(`http://localhost:8000/myProfile`, {
+                headers: { Authorization: `Bearer ${user.access_token}` }
+            }).then(response => {
+                let userData = {
+                    posts: response.data.posts,
+                    ...user
+                }
+                setUser(userData)
+            }).then(()=>{
+                navigate('/myProfile')
+            })
         })
-        navigate('/myProfile')
     };
 
     const signout = () => {
