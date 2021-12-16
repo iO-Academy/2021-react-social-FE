@@ -3,12 +3,14 @@ import TextField from '@mui/material/TextField';
 import {Stack} from "@mui/material";
 import GoToProfile from "./GoToProfile";
 import {useAuth} from "../Hooks/useAuth";
+import {useNavigate} from "react-router-dom";
 
 const LoginForm = () => {
     const [email, setEmail] = useState(null)
     const [password, setPassword] = useState(null)
 
     const auth = useAuth()
+    const navigate = useNavigate();
 
     const handleEmailChange = (e) => {
         //any validation checks here
@@ -24,7 +26,7 @@ const LoginForm = () => {
         console.log('A email was submitted: '  + password + email);
         e.preventDefault();
         auth.signin(email, password)
-
+        navigate('/myProfile')
     }
 
     return (

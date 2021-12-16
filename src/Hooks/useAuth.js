@@ -43,6 +43,7 @@ function useProvideAuth() {
                 return setUser(response.data.data);
             }
         })
+        navigate('/myProfile')
     };
 
     const signout = () => {
