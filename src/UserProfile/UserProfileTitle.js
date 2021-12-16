@@ -1,5 +1,5 @@
 function UserProfileTitle() {
-    return <h1>Sign Up</h1>
+    return <p>User Profile Title</p>
 }
 
 export default UserProfileTitle

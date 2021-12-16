@@ -1,5 +1,6 @@
 import { useState, useContext, createContext } from 'react';
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 const authContext = createContext({});
 
@@ -16,6 +17,7 @@ export const useAuth = () => {
 
 function useProvideAuth() {
     const [user, setUser] = useState(null);
+    const navigate = useNavigate();
 
     const signup = (username, bio, email, password) => {
         if (username === '' || email === '' || password === '') return;
@@ -44,7 +46,8 @@ function useProvideAuth() {
     };
 
     const signout = () => {
-        return setUser(null);
+         setUser(null);
+         navigate('/')
     };
 
     return {

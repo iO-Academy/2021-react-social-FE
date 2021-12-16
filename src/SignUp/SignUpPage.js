@@ -16,7 +16,7 @@ function SignInPage() {
                 color: 'greeny.main',
                 // height: '100vh',
                 width: '100vw',
-                fontSize:' 3rem',
+                // fontSize:' 3rem',
                 m: 1,
                 borderRadius: 1,
                 textAlign: 'center',

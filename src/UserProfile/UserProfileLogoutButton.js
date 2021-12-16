@@ -1,15 +1,15 @@
-
-
+import Button from "@mui/material/Button";
+import {useAuth} from "../Hooks/useAuth";
 
 function UserProfileLogoutButton() {
-    return (
-                <div className="mdc-banner__actions">
-                    <button type="button" className="mdc-button mdc-banner__primary-action">
-                        <div className="mdc-button__ripple"></div>
-                        <div className="mdc-button__label">Logout</div>
-                    </button>
-                </div>
+    const auth = useAuth()
 
+    const handleClick = () => {
+        auth.signout()
+    }
+
+    return (
+            <Button onClick={handleClick} variant="text" color="blacky">Logout</Button>
     )
 }
 

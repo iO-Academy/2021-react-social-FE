@@ -6,27 +6,27 @@ import UserProfileHeader from "./UserProfileHeader";
 
 function UserProfilePage() {
     return (
-        // <ThemeProvider theme={theme}>
-        //     <Container sx={{
-        //         display: 'flex',
-        //         flexDirection: 'column',
-        //         margin: 2,
-        //         mx: 'auto',
-        //         bgcolor: 'lilacy.main',
-        //         color: 'greeny.main',
-        //         height: '100vh',
-        //         width: '100vw',
-        //         fontSize:' 3rem',
-        //         m: 1,
-        //         borderRadius: 1,
-        //         textAlign: 'center',
-        //         justifyContent: 'center',
-        //
-        //     }}>
+        <ThemeProvider theme={theme}>
+            <Container sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                margin: 2,
+                mx: 'auto',
+                bgcolor: 'greeny.main',
+                color: 'blacky.main',
+                // height: '20vh',
+                width: '100vw',
+                fontSize:' 3rem',
+                m: 1,
+                borderRadius: 1,
+                textAlign: 'center',
+                justifyContent: 'center',
+
+            }}>
                 <UserProfileHeader />
 
-        //     </Container>
-        // </ThemeProvider>
+             </Container>
+         </ThemeProvider>
     )
 }
 

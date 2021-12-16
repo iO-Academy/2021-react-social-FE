@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import {ProvideAuth} from "./Hooks/useAuth";
+import {BrowserRouter} from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-      <ProvideAuth>
-          <App />
-      </ProvideAuth>
+      <BrowserRouter>
+          <ProvideAuth>
+              <App />
+          </ProvideAuth>
+      </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

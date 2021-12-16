@@ -17,6 +17,9 @@ const theme = createTheme({
         whitey: {
             main:'#FFFFFF'
         },
+        blacky: {
+            main:'#000000'
+        },
     },
 });
 
