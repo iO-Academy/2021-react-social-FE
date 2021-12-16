@@ -47,23 +47,7 @@ function UserProfilePage() {
                 <UserProfileUsername/>
             </Container>
             <UserProfileWritePost />
-            <Container sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                margin: 2,
-                mx: 'auto',
-                bgcolor: 'bluey.main',
-                color: 'blacky.main',
-                height: '20vh',
-                width: '60vw',
-                fontSize:' 1rem',
-                m: 4,
-                borderRadius: 5,
-                textAlign: 'center',
-                justifyContent: 'center',
-            }}>
                 <UserPosts />
-            </Container>
          </ThemeProvider>
     )
 }
