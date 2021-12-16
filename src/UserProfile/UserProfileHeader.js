@@ -6,7 +6,7 @@ import {Stack} from "@mui/material";
 import React from "react";
 // const banner = new MDCBanner(document.querySelector('.mdc-banner'));
 
-function UserProfileHeader() {
+function UserProfileHeader(props) {
     return (
         <div className="mdc-banner" role="banner" >
         <div className="mdc-banner__content"
@@ -17,7 +17,7 @@ function UserProfileHeader() {
             </Stack>
             <div className="mdc-banner__graphic-text-wrapper">
                 <div className="mdc-banner__text" >
-                   <UserProfileBio />
+                   <UserProfileBio bio={props.bio} />
                 </div>
             </div>
 

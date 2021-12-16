@@ -1,14 +1,13 @@
 import UserPostConstruction from "./UserPostConstruction";
 
 
-function UserPosts() {
-    const postsFromDB = [{date: '16/12/2021', username: 'kimberley', content: 'post number 1'},
-        {date: '16/12/2021', username: 'kimberley', content: 'post number 2'}]
-
+function UserPosts(posts) {
+    console.log(posts.posts.posts)
+    let postsFromDB = posts.posts.posts
     return (
         <>
             {
-                postsFromDB.map(post => <UserPostConstruction content={post.content} />)
+                 postsFromDB.map(post => <UserPostConstruction content={post.content} />)
             }
         </>
     )

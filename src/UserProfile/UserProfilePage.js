@@ -21,20 +21,17 @@ function UserProfilePage() {
             <Container sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                margin: 2,
                 mx: 'auto',
                 bgcolor: 'greeny.main',
                 color: 'blacky.main',
-                // height: '20vh',
                 width: '1',
                 fontSize:' 3rem',
-                m: 1,
                 borderRadius: 1,
                 textAlign: 'center',
                 justifyContent: 'center',
 
             }}>
-                <UserProfileHeader />
+                <UserProfileHeader bio={auth.user} />
              </Container>
             <Container sx={{
                 display: 'flex',
@@ -52,10 +49,10 @@ function UserProfilePage() {
                 justifyContent: 'center',
 
             }}>
-                <UserProfileUsername/>
+                <UserProfileUsername username={auth.user}/>
             </Container>
             <UserProfileWritePost />
-                <UserPosts />
+                <UserPosts posts={auth.user}/>
          </ThemeProvider>
     )
 }

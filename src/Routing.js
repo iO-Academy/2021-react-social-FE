@@ -12,8 +12,7 @@ function Routing() {
                 <Route exact path="/" element={<LandingPage />} />
                 <Route path="/signUp" element={<SignInPage />} />
                 <Route path="/login" element={<LoginPage />} />
-                <Route path="/myProfile" element={<UserProfilePage />} />
-                <Route path="/*" element={
+                <Route path="/myProfile" element={
                     <LoggedIn>
                         <UserProfilePage />
                     </LoggedIn>

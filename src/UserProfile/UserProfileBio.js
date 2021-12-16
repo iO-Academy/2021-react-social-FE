@@ -1,6 +1,7 @@
-function UserProfileBio() {
-    const userBio = 'hey this is a bio'
-    return <p>" {userBio} "</p>
+function UserProfileBio(props) {
+
+    const userBio = props.bio.bio
+    return <p>" {userBio}  "</p>
 }
 
 export default UserProfileBio
