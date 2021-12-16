@@ -36,6 +36,7 @@ const SignUpForm = () => {
     const handleEmailChange = (e) => {
         //any validation checks here
         setEmail(e.target.value)
+
     }
 
     const handlePasswordChange = (e) => {
@@ -47,26 +48,28 @@ const SignUpForm = () => {
     const handleSubmit = (e) => {
         console.log('A email was submitted: ' + username + password + bio + email);
         e.preventDefault();
-        if (!ValidateEmail(email) || email.length === 0){
+        if (!ValidateEmail(email) || email.length === 0) {
             document.getElementById("emailError").textContent = 'Invalid email address'
-        }else {
+        } else {
+            document.getElementById("emailError").textContent = ''
             setEmail(email)
         }
         if (username.length > 12 || username.length === 0){
             document.getElementById("usernameError").textContent = 'Input a username less than 12 characters'
         } else {
+            document.getElementById("usernameError").textContent = ''
             setUsername(htmlEntities(username))
         }
         if (password.length < 8 || password.length === 0 ){
-            let errorMessage = "Password too short."
             document.getElementById("passwordError").textContent = 'Input a password that is at least 8 characters'
         } else {
+            document.getElementById("passwordError").textContent = ''
             setPassword(htmlEntities(password))
         }
         if (bio.length > 500 || bio.length === 0){
-            let errorMessage = "bio too long."
             document.getElementById("bioError").textContent = 'Input bio that is less than 500 characters'
         } else {
+            document.getElementById("bioError").textContent = ''
             setBio(htmlEntities(bio))
         }
         auth.signup(username,bio,email,password)
