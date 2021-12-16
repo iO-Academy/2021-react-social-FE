@@ -14,6 +14,9 @@ const theme = createTheme({
         lilacy: {
             main:'#5E60CE'
         },
+        bluey: {
+            main:'#48BFE3'
+        },
         whitey: {
             main:'#FFFFFF'
         },

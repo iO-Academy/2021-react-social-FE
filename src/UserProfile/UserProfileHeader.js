@@ -1,5 +1,5 @@
 import {MDCBanner} from '@material/banner';
-import UserProfileTitle from "./UserProfileTitle";
+import UserProfileBio from "./UserProfileBio";
 import UserProfileLogoutButton from "./UserProfileLogoutButton";
 import RegisterButton from "../SignUp/RegisterButton";
 import {Stack} from "@mui/material";
@@ -17,7 +17,7 @@ function UserProfileHeader() {
             </Stack>
             <div className="mdc-banner__graphic-text-wrapper">
                 <div className="mdc-banner__text" >
-                   <UserProfileTitle />
+                   <UserProfileBio />
                 </div>
             </div>
 
