@@ -74,8 +74,15 @@ const SignUpForm = () => {
             document.getElementById("bioError").textContent = ''
             setBio(htmlEntities(bio))
         }
-        auth.signup(username,bio,email,password)
-        navigate('/myProfile')
+
+        if (document.getElementById("bioError") === ""
+            && document.getElementById("passwordError") === ""
+            && document.getElementById("usernameError") === ""
+            && document.getElementById("emailError") === "") {
+            auth.signup(username,bio,email,password)
+            navigate('/myProfile')
+        }
+
     }
 
     return (
