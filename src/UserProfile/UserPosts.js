@@ -6,7 +6,7 @@ function UserPosts(posts) {
     let postsFromDB = posts.posts.posts
     return (
         <>
-            {
+            {postsFromDB != null &&
                  postsFromDB.map(post => <UserPostConstruction content={post.content} />)
             }
         </>

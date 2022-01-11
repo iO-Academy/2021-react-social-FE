@@ -2,6 +2,7 @@ import { useState, useContext, createContext } from 'react';
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 
+
 const authContext = createContext({});
 
 // Provider component that wraps the app and makes auth object ...
@@ -28,7 +29,8 @@ function useProvideAuth() {
             password: password
         }).then(response => {
             if (response.data.success) {
-                return setUser(response.data.data);
+                setUser(response.data.data);
+                navigate('/myProfile')
             }
         })
     };

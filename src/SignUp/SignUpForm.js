@@ -4,7 +4,6 @@ import {Stack} from "@mui/material";
 import RegisterButton from "./RegisterButton";
 import {useAuth} from "../Hooks/useAuth";
 import FormHelperText from '@mui/material/FormHelperText';
-import {useNavigate} from "react-router-dom";
 
 
 const SignUpForm = () => {
@@ -12,7 +11,6 @@ const SignUpForm = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [bio, setBio] = useState('')
-    const navigate = useNavigate()
 
     const auth = useAuth()
     function htmlEntities(str) {
@@ -68,19 +66,11 @@ const SignUpForm = () => {
             document.getElementById("passwordError").textContent = ''
             setPassword(htmlEntities(password))
         }
-        if (bio.length > 500){
-            document.getElementById("bioError").textContent = 'Input bio that is less than 500 characters'
-        } else {
-            document.getElementById("bioError").textContent = ''
-            setBio(htmlEntities(bio))
-        }
 
-        if (document.getElementById("bioError") === ""
-            && document.getElementById("passwordError") === ""
-            && document.getElementById("usernameError") === ""
-            && document.getElementById("emailError") === "") {
+        if (password !== ""
+            && username !== ""
+            && email !== "") {
             auth.signup(username,bio,email,password)
-            navigate('/myProfile')
         }
 
     }
